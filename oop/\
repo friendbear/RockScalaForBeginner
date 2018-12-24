@@ -12,8 +12,9 @@ object OOBasics extends App {
   val inposter = new Writer("Charies", "Disckons", 1812)
   val novel = new Novel("Great Expectations", 1861, author)
 
-  println(novel.authorAge)
+  println(novel.autherAge)
   println(novel.isWrittenBy(inposter))
+
 
 
   // Counter Test Code
@@ -46,20 +47,21 @@ class Person(name: String,val age: Int = 0) {
   Writer: first name, surname, year
     - method fullname
 
-  Novel: name, year of release, author
+  Novel: name, year of release, auther
   - authorAge
   - inWrittenBy(author)
   - copy (new year of relase) = new instance of Novel
 
 */
-class Writer(firstName: String, surname: String, val year: Int) {
-  def fullname: String = firstName + " " + surname
+class Writer(firstName: STring, surname: String, year: Int) {
+  def fullname: String = firstname + " " + surname
 }
 
-class Novel(val name: String, val year: Int, val author: Writer) {
-  def authorAge = year -  author.year
-  def isWrittenBy(author: Writer) = author == this.author
-  def copy(newYear: Int): Novel = new Novel(name, newYear, author)
+class Novel(name: String,val year: Int, val author: Writer) {
+  def authorAge = year -  auther.year
+  def isWritternBy(author: Writer): Boolean author == this.author
+  def copy(newYear: Int): Novel = new Novel(name, newYear, auther)
+
 }
 
 
