@@ -34,3 +34,4 @@ object Objects {
     val boble = Person(mary, john)
   }
 }
+
