@@ -1,6 +1,6 @@
 
 
-abstract class MyList[+T] {
+abstract class MyList {
 
   /*
    * head = first element of the list
@@ -9,30 +9,30 @@ abstract class MyList[+T] {
    * add(int) => new list with this element added
    * toString => a string representation of the list
    */
-  def head[T]: T
-  def tail[T]: MyList[T]
+  def head: Int
+  def tail: MyList
   def isEmpty: Boolean
-  def add[T](element: T): MyList[T]
+  def add(element: Int): MyList
   def printElements: String
   override def toString: String = "[" + printElements + "]"
 }
 
 object Empty extends MyList {
-  def head[T]: T = throw new NoSuchElementException
-  def tail[T]: MyList[T] = throw new NoSuchElementException
+  def head: Int = throw new NoSuchElementException
+  def tail: MyList= throw new NoSuchElementException
   def isEmpty: Boolean = true
-  def add[T](element: T): MyList[T] = new Cons(element, Empty)
+  def add(element: Int): MyList= new Cons(element, Empty)
   def printElements: String = ""
 }
 
-class Cons[T](head: T, tail: MyList[T]) extends MyList {
-  def head[T]: T = head
-  def tail[T]: MyList[T] = tail
+class Cons(h: Int, t: MyList) extends MyList {
+  def head: Int = h
+  def tail: MyList = t
   def isEmpty: Boolean = false
-  def add[T](element: T): MyList[T] = new Cons(element, this)
+  def add(element: Int): MyList = new Cons(element, this)
   def printElements: String =
-    if(tail.isEmpty) "" + head
-    else head + " " + tail.printElements
+    if(t.isEmpty) "" + h
+    else h + " " + t.printElements
 }
 
 object ListTest extends App {
