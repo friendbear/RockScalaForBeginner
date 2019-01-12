@@ -14,13 +14,17 @@ Rock The Scala For Beginners
 <summary>Future Map</summary>
 <pre>
 <code>
-Scala Advanced Cource
-- Apache Spark + Scala
-  - AWS EMR
-  - AWS S3
-  - AWS DynamoDB
-  - ElasticsSearch -> Kibana
-
+val head = "Scala Advanced Cource".split(" ").toList.head
+val power = {
+ Seq(
+   "Apache Spark",
+   "AWS EMR",
+   "AWS S3",
+   "AWS DynamoDB"
+ ).flatMap(v => Map(head -> v))
+}.mkString
+// ElasticsSearch -> Kibana -> ...
+}
 </code>
 
 <code>
