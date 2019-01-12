@@ -32,7 +32,7 @@ object Expressions extends App {
 
   var i = 0
   while (i < 10) {
-    println(1)
+    println(i)
     i += 1
   }
 
