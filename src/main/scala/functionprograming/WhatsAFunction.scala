@@ -11,7 +11,10 @@ trait MyFunction[A, B] {
   */
 object WhatsAFunction extends App {
 
-  
+  trait MyFunction[A, B] {
+    def apply(element: A): B
+  }
+
   val doubler = new Function[Int, Int] {
     override def apply(element: Int): Int = element * 2
   }
@@ -59,11 +62,6 @@ object WhatsAFunction extends App {
   println(superAdder(3)(4)) // curried function
 
 
-  trait MyFunction[A, B] {
-    def apply(element: A): B
-  }
 
 }
-
-
 

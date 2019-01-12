@@ -17,8 +17,10 @@ object Anonymousfunctions extends App {
   // no params
   val justDoSomething: () => Int = () => 3
 
+  val justDoSomethingByName: () => Int => x => 3
   println(justDoSomething) // function itself
   println(justDoSomething()) // call
+  println(justDoSomethingByName)
 
   // curly braces with lambdas
   val stringToInt = { (str: String) =>
