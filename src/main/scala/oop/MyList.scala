@@ -125,19 +125,19 @@ object ListTest extends App {
   val listOfString: MyList[String] = new Cons("Hello", new Cons("world", new Cons("Scala", Empty)))
   println(listOfString.toString)
 
-  println(listOfIntegers.map(new Function1[Int, Int] {
-    override def apply(elem: Int): Int = elem * 2
-  })).toString
+  println(listOfIntegers.map(x => x * 2)).toString
 
-  println(listOfIntegers.filter(new Function[Int, Boolean] {
+/*  println(listOfIntegers.filter(new Function[Int, Boolean] {
     override def apply(elem: Int): Boolean = elem % 2 == 0
-  }).toString)
+  }).toString) */
+  println(listOfIntegers.filter(_ % 2 == 0))
 
   println((listOfIntegers ++ anotherListOfIntegers).toString)
 
-  println(listOfIntegers.flatMap(new Function1[Int, MyList[Int]] {
+/*  println(listOfIntegers.flatMap(new Function1[Int, MyList[Int]] {
     override def apply(elem: Int): MyList[Int] = new Cons(elem, new Cons(elem + 1, Empty))
-  }).toString)
+  }).toString) */
+  println(listOfIntegers.flatMap(t => new Cons(t, new Cons(t +1, Empty))).toString)
 
   // CCs によりSensible equals, hashCode, toString
   println(cloneListOfIntegers == listOfIntegers)
