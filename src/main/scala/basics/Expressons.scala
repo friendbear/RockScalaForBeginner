@@ -6,7 +6,7 @@ package basics
   * - Expressions
   * 3
   */
-object Expressions extends App {
+object Expressions {
 
 
   val x = 1 + 2 // EXPRESSION
@@ -69,5 +69,6 @@ object Expressions extends App {
     if (someValue) 239 else 986
     42
   }
-  println(someOtherValue)
+  def main(args: Array[String]) = {
+  }
 }

@@ -16,7 +16,7 @@ object DefaultArgs extends App {
 
   val fact10 = trFact(10)
 
-  def savePicture(format: String = "jpg", width: Int = 1920, height: Int = 1080) = println(s"$format $width $height")
+  def savePicture(format: String = "jpg", width: Int = 1920, height: Int = 1080) = s"$format $width $height"
 
   savePicture(width = 800, height = 600)
   savePicture()
