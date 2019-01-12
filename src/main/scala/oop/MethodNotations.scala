@@ -58,6 +58,7 @@ object MethodNotations extends App {
    * mery + "the rockstar" => new Person "Mary (the rockstar)"
    */
   println((mary + "the rockstar").apply())
+  println(mary.+("the rockstar"))
 
   /*
    * 2. Add an age to Person class

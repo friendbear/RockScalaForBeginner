@@ -1,3 +1,11 @@
+
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Packaging and Imports
+  *
+  */
 package object oop {
 
   def sayHello = println("Hello, Scala")

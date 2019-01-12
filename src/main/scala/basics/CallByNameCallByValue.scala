@@ -1,5 +1,12 @@
 
 package basics
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Call-by-Name and Call-by-Value
+  * 7
+  */
 object CallByNameCallByValue extends App {
 
     def byValue(n: Long) = {

@@ -1,6 +1,12 @@
 package oop
 
 
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Scala Objects
+  *
+  */
 object Objects {
 
   // SCALA DOES NOT HAVE CLASS LEVEL FUNCTIONALITY ("static")

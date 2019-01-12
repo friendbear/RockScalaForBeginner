@@ -1,6 +1,13 @@
 package oop
 
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Case Classes
+  *
+  */
 object CasseCasses extends App {
 
   /*

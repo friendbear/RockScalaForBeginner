@@ -1,6 +1,13 @@
 
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Default Args
+  *
+  */
 object DefaultArgs extends App {
 
   def trFact(n: Int, acc: Int = 1): Int =

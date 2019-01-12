@@ -1,5 +1,12 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Recursion
+  * 6
+  */
 object Recursion extends App {
 
   def factorial(n: Int): Int =
@@ -31,7 +38,7 @@ object Recursion extends App {
    * + FactHelper( 1, 1 * 2 * 3 * 4 * ... * 10)
    * = 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
    */
-  println(anotherFactorial(200000))
+  println(anotherFactorial(2000))
 
   //WHEN YOU NEED LOOPS, USE _TAIL_ RECURSION.
 
@@ -57,7 +64,9 @@ object Recursion extends App {
     isPrimeTailrec(n / 2, true)
   }
 
+  println(isPrime(3))
   println(isPrime(2003))
+  println(isPrime(10050))
 
 
   def fibonacci(n: Int): Int = {

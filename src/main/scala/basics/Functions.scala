@@ -1,5 +1,12 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Functions
+  * 4
+  */
 object Functions extends App {
 
   def aFunction(a: String, b: Int): String = {
@@ -35,7 +42,7 @@ object Functions extends App {
    * 3. A Fibonacci function
    *    f(1) = 1
    *    f(2) = 1
-   *    f(n = f(n -1) + f(n -2)
+   *    f(n) = f(n -1) + f(n -2)
    * 4. Tests if a number is prime.
    */
   def greetingForKids(name: String , age: Int): String = 

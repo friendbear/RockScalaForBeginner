@@ -1,6 +1,10 @@
 
 package filesystem
 
+/**
+  * Coding practice: A Small File System
+  *
+  */
 
 /**
 object Filesystem extends App {

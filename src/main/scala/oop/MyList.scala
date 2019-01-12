@@ -1,4 +1,4 @@
-package oop
+  package oop
 
 
 /*
@@ -8,7 +8,24 @@ package oop
  * add(int) => new list with this element added
  * toString => a string representation of the list
  */
+/*
+ * expand MyList to be generic
+ * TODO: MyList to be generic
+ */
+/*
+  1. MyList: replace all FunctionX calls with lambdas
 
+  removed
+
+  trait MyPredicate[-T] {
+    def test(elem: T): Boolean
+  }
+
+  trait MyTransformer[-A, B] {
+    def transform(elem: A): B
+  }
+
+ */
 /*
   1. Expand MyList
     - foreach method A => Unit
@@ -52,7 +69,7 @@ abstract class MyList[+A] {
 }
 
 /**
-  * Emptyはcase object
+  * Empty = case object
   */
 case object Empty extends MyList[Nothing] {
   def head: Nothing = throw new NoSuchElementException
@@ -72,7 +89,7 @@ case object Empty extends MyList[Nothing] {
 }
 
 /**
-  * Consはcase class
+  * Cons = case class
   */
 case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   def head: A = h
@@ -140,14 +157,6 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   }
 }
 
-/**
-trait MyPredicate[-T] {
-  def test(elem: T): Boolean
-}
-
-trait MyTransformer[-A, B] {
-  def transform(elem: A): B
-}*/
 
 object ListTest extends App {
 
@@ -189,4 +198,3 @@ object ListTest extends App {
 
   println(listOfIntegers.sort((x, y) => y - x))
 }
-
