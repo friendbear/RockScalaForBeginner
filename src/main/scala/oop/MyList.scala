@@ -1,15 +1,36 @@
 package oop
 
 
+/*
+ * head = first element of the list
+ * tail = remainder of the list
+ * isEmpty = is this list empty
+ * add(int) => new list with this element added
+ * toString => a string representation of the list
+ */
+
+/*
+  1. Expand MyList
+    - foreach method A => Unit
+      [1,2,3].foreach(x => println(x))
+
+    - sort function ((A, A) => Int) => MyList
+      [1,2,3].sort((x, y) => y - x) => [3,2,1]
+
+    - zipWith (list, (A, A) => B) => MyList[B]
+      [1,2,3].zipWith([4,5,6], x * y) => [1 * 4.2 * 2 * 5, 3 * 6] = [4,10,18]
+
+    - fold(start)(function) => a value
+      [1,2,3].fold(0)(x + y) = 6
+
+  2. toCurry(f: (Int, Int) => Int) => (Int => Int => Int)
+     fromCurry(f: (Int => Int => Int)) => (Int, Int) => Int
+
+  3. compose(f,g) => x => f(g(x))
+     andThen(f,g) => x => g(f(x))
+ */
 abstract class MyList[+A] {
 
-  /*
-   * head = first element of the list
-   * tail = remainder of the list
-   * isEmpty = is this list empty
-   * add(int) => new list with this element added
-   * toString => a string representation of the list
-   */
   def head: A
   def tail: MyList[A]
   def isEmpty: Boolean
@@ -25,6 +46,9 @@ abstract class MyList[+A] {
   // concatenation
   def ++[B >: A](list: MyList[B]): MyList[B]
 
+  // hofs
+  def foreach(f: A => Unit): Unit
+  def sort(compare: (A, A) => Int): MyList[A]
 }
 
 /**
@@ -42,6 +66,9 @@ case object Empty extends MyList[Nothing] {
   def filter(predicate: Nothing => Boolean): MyList[Nothing] = Empty
 
   def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
+
+  def foreach(f: Nothing => Unit): Unit = ()
+  def sort(compare: (Nothing, Nothing) => Int): MyList[Nothing] = Empty
 }
 
 /**
@@ -95,6 +122,22 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     = new Cons(1, new Cons(2, new Cons(3, new Cons(4, new Cons(5)))))
    */
   def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
+
+
+  def foreach(f: A => Unit): Unit = {
+    f(h)
+    t.foreach(f)
+  }
+
+  def sort(compare: (A, A) => Int): MyList[A] = {
+    def insert(x: A, sortedList: MyList[A]): MyList[A] =
+      if (sortedList.isEmpty) new Cons(x, Empty)
+      else if (compare(x, sortedList.head) <= 0) new Cons(x, sortedList)
+      else new Cons(sortedList.head, insert(x, sortedList.tail))
+
+    val sortedTail = t.sort(compare)
+    insert(h, sortedTail)
+  }
 }
 
 /**
@@ -141,5 +184,9 @@ object ListTest extends App {
 
   // CCs によりSensible equals, hashCode, toString
   println(cloneListOfIntegers == listOfIntegers)
+
+  listOfIntegers.foreach(println _)
+
+  println(listOfIntegers.sort((x, y) => y - x))
 }
 
