@@ -1,5 +1,12 @@
 package functionprograming
 
+
+/**
+  * Functional Programming in Scala
+  *
+  * - Anonymous Functions
+  *
+  */
 object Anonymousfunctions extends App {
 
   val doublerF = new Function[Int, Int] {
@@ -17,7 +24,7 @@ object Anonymousfunctions extends App {
   // no params
   val justDoSomething: () => Int = () => 3
 
-  val justDoSomethingByName: () => Int => x => 3
+  val justDoSomethingByName: () => Int = () => 3
   println(justDoSomething) // function itself
   println(justDoSomething()) // call
   println(justDoSomethingByName)

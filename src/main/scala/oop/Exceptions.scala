@@ -1,5 +1,12 @@
 package oop
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Exceptions
+  *
+  */
 object Exceptions extends App {
 
   val x: String = null

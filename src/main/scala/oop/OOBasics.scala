@@ -1,5 +1,12 @@
 package oop
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - EObject-Oriented Basics
+  * 10
+  */
 object OOBasics extends App {
 
   val person = new Person("John", 26)

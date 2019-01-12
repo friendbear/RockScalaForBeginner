@@ -1,5 +1,11 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - StringOps
+  */
 object StringOps extends App {
 
   val str: String = "Hello, I am learning Scala"

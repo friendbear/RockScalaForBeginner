@@ -1,5 +1,11 @@
 package basics
 
+/**
+  * The Absolute Scala Basics
+  *
+  * - Expressions
+  * 3
+  */
 object Expressions extends App {
 
 

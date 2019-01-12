@@ -8,6 +8,10 @@ package oop
  * add(int) => new list with this element added
  * toString => a string representation of the list
  */
+/**
+  * expand MyList to be generic
+  * TODO: MyList to be generic
+  */
 
 /*
   1. Expand MyList
@@ -52,7 +56,7 @@ abstract class MyList[+A] {
 }
 
 /**
-  * Emptyはcase object
+  * Empty = case object
   */
 case object Empty extends MyList[Nothing] {
   def head: Nothing = throw new NoSuchElementException
@@ -72,7 +76,7 @@ case object Empty extends MyList[Nothing] {
 }
 
 /**
-  * Consはcase class
+  * Cons = case class
   */
 case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   def head: A = h
@@ -189,4 +193,3 @@ object ListTest extends App {
 
   println(listOfIntegers.sort((x, y) => y - x))
 }
-

@@ -1,5 +1,12 @@
 package oop
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Anonymous Classes
+  *
+  */
 object AnnomousClasses extends App {
 
   abstract class  Animal {

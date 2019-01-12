@@ -1,5 +1,12 @@
 package functionprograming
 
+
+/**
+  * Functional Programming in Scala
+  *
+  * - What's a Function, Really?
+  *
+  */
 trait MyFunction[A, B] {
   def apply(element:A): B
 }

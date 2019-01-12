@@ -1,5 +1,12 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Values, Variables and Types
+  * 2
+  */
 object Main extends App {
 
   val x = 42

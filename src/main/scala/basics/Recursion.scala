@@ -1,5 +1,12 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Recursion
+  * 6
+  */
 object Recursion extends App {
 
   def factorial(n: Int): Int =

@@ -1,5 +1,12 @@
 package basics
 
+
+/**
+  * The Absolute Scala Basics
+  *
+  * - Functions
+  * 4
+  */
 object Functions extends App {
 
   def aFunction(a: String, b: Int): String = {

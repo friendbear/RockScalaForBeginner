@@ -4,6 +4,13 @@ import playground.{PrinceCharming, Cinderella => Prince}
 import java.sql.{Date => SqlDate}
 import java.util.Date
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Packaging and Imports
+  *
+  */
 // default imports
 // java.lang - String, Object, Exception
 // scala - Int, Nothing, Function

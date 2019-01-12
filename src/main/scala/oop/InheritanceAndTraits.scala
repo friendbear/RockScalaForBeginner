@@ -1,5 +1,12 @@
 package oop
 
+
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - Inheritance
+  *
+  */
 object InheritanceAndTraits extends App {
 
   class Animal {
