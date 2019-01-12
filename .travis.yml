@@ -6,5 +6,5 @@ jdk:
   - openjdk8
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION check-gen-type-classes test
+  - sbt ++$TRAVIS_SCALA_VERSION test
 
