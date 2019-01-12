@@ -39,6 +39,6 @@ object CasseCasses extends App {
   }
 
   /*
-   * Expand
+   * Expand MyList -use case classes and
    */
 }
