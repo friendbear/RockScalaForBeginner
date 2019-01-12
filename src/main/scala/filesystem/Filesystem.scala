@@ -2,6 +2,7 @@
 package filesystem
 
 
+/**
 object Filesystem extends App {
 
   val firstRoot = Directory.ROOT
@@ -14,3 +15,4 @@ object Filesystem extends App {
     state = Command.from(scanner.nextLine()).apply(state)
   }
 }
+  */

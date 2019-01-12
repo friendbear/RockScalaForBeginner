@@ -1,5 +1,9 @@
 package functionprograming
 
+trait MyFunction[A, B] {
+  def apply(element:A): B
+}
+
 object WhatsAFunction extends App {
 
   
@@ -16,7 +20,7 @@ object WhatsAFunction extends App {
 
   println(stringToIntConverter("3") + 4)
 
-  val adder: ((Int, Int) =>Int) = {
+  val adder: (Int, Int) => Int = new Function2[Int, Int, Int] {
     def apply(a: Int, b: Int): Int = a + b
   }
 
@@ -34,12 +38,9 @@ object WhatsAFunction extends App {
   def concatenator: (String, String) => String = new Function2[String, String, String] {
     override def apply(a: String, b: String): String = a + b
   }
-  println(concatenator("Hello", "Scala))
+  println(concatenator("Hello", "Scala"))
 
 }
 
-trait MyFunction[A, B] {
-  def apply(element:A): B
-}
 
 

@@ -28,7 +28,7 @@ object StringOps extends App {
 
   val greeting = s"Hello, my name is $name and I am $age years old"
   val antohergreeting = s"Hello, my name is $name and I am $age I will be turning ${age + 1} yeears old."
-  println(anotherGreeting)
+  println(antohergreeting)
 
   // F-interpolators
   val speed = 1.2f

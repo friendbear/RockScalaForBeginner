@@ -49,10 +49,11 @@ object Recursion extends App {
 
 
   def isPrime(n: Int): Boolean = {
-    def isPrimeTailrec(n: Int, isStillPrime: Boolean): Boolean =
+    def isPrimeTailrec(t: Int, isStillPrime: Boolean): Boolean =
       if (!isStillPrime) false
       else if (t <= 1) true
       else isPrimeTailrec(t - 1, n % t != 0 && isStillPrime)
+
     isPrimeTailrec(n / 2, true)
   }
 
@@ -69,6 +70,4 @@ object Recursion extends App {
   }
 
   println(fibonacci(8)) // 1 1 2 3 5 8 13, 21
-
-
 }
