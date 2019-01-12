@@ -13,7 +13,7 @@ object Main extends App {
   val aString: String = "hello"
   val anotherString = "goodbye"
 
-  val aBoolean: = false
+  val aBoolean= false
   val aChar: Char = 'a'
   val anInt: Int = x
   val aShort: Short = 4613
@@ -25,6 +25,4 @@ object Main extends App {
   var aVariable: Int = 4
 
   aVariable = 5 // side effects
-
-
 }

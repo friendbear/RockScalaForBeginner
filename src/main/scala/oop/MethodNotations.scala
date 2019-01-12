@@ -1,3 +1,4 @@
+package oop
 
 
 object MethodNotations extends App {
@@ -5,7 +6,7 @@ object MethodNotations extends App {
   class Person(val name: String, val favoriteMovie: String,val age: Int = 1) {
     def likes(movie: String): Boolean = movie == favoriteMovie
     def +(person: Person): String = s"${this.name} is hanging out with ${person.name}"
-    def +(nickname: String): Person = new Person(s"$name ($nickname)", favorite)
+    def +(nickname: String): Person = new Person(s"$name ($nickname)", favoriteMovie)
 
     def unary_! : String = s"$name, what the heck?!"
     def unary_+ : Person = new Person(name, favoriteMovie, age + 1)

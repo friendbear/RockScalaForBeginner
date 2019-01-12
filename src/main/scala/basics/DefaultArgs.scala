@@ -1,4 +1,5 @@
 
+package basics
 
 object DefaultArgs extends App {
 
@@ -10,7 +11,7 @@ object DefaultArgs extends App {
 
   def savePicture(format: String = "jpg", width: Int = 1920, height: Int = 1080) = println(s"$format $width $height")
 
-  savePicture(800, 600)
+  savePicture(width = 800, height = 600)
   savePicture()
   savePicture(width = 800)
 
@@ -19,6 +20,6 @@ object DefaultArgs extends App {
    * 2. name the arguments
    */
 
-  savePictiure(height = 600, width = 800, format = "bmp")
+  savePicture(height = 600, width = 800, format = "bmp")
 
 }

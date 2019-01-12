@@ -1,4 +1,5 @@
 
+package basics
 object CallByNameCallByValue extends App {
 
     def byValue(n: Long) = {

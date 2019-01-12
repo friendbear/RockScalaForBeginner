@@ -1,3 +1,4 @@
+package basics
 
 object StringOps extends App {
 

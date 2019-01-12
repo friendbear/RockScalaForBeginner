@@ -1,3 +1,4 @@
+package oop
 
 object AnnomousClasses extends App {
 
@@ -49,9 +50,10 @@ object AnnomousClasses extends App {
   }
 
   trait MyTransformer[-A, B] {
-    def transform[-A, B](from: A): B
+    def transform[A, B](from: A): B
   }
 
+  /**
   class MyList {
     def map[A](transformer: MyTransformer): MyList[A] = ???
     def filter(predicate: => Boolean): MyList = ???
@@ -65,5 +67,7 @@ object AnnomousClasses extends App {
   val evenPredicate = new EvenPredicate {
     override def test(v: T): 
   }
+
+    */
 
 } 

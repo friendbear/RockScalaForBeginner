@@ -1,3 +1,4 @@
+package basics
 
 object Expressions extends App {
 

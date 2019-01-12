@@ -1,3 +1,4 @@
+package oop
 
 
 object CasseCasses extends App {
@@ -17,12 +18,12 @@ object CasseCasses extends App {
   println(jim)
 
   // 3. equal and hashCode implemented OOTB
-  jim2 = new Pearson("Jim", 34)
+  val jim2 = new Person("Jim", 34)
   println(jim == jim2)
 
   // 4. CCn have  handy copy method
   val jim3 = jim.copy(age = 43)
-  println(jim4)
+  println(jim3)
 
   // 5. CCs have compainion objects
   val thePerson = Person
@@ -39,5 +40,5 @@ object CasseCasses extends App {
 
   /*
    * Expand
-
+   */
 }

@@ -1,3 +1,4 @@
+package oop
 
 object Generics extends App {
 
@@ -32,7 +33,7 @@ object Generics extends App {
   class Dog extends Animal
 
   // yes List[Cat] extends List[Animal] = COVARIANCE
-  class CovariantList{+A]
+  class ConvariantList[+A]
 
   val animal: Animal = new Cat
   val animalList: ConvariantList[Animal] = new ConvariantList[Cat]
@@ -49,7 +50,7 @@ object Generics extends App {
   val contravariantList: ContravariantList[Cat] = new ContravariantList[Animal]
 
   class Trainer[-A]
-  val trainer: Traner[Cat] = new Trainer[Animal]
+  val trainer: Trainer[Cat] = new Trainer[Animal]
 
   // bounded types
   class Cage[A <: Animal](animal: A)

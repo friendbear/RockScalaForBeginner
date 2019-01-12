@@ -1,3 +1,4 @@
+package oop
 
 object InheritanceAndTraits extends App {
 
@@ -11,7 +12,6 @@ object InheritanceAndTraits extends App {
     def crunch {
       eat
       println("crunch crunch")
-
     }
   }
 
@@ -21,12 +21,13 @@ object InheritanceAndTraits extends App {
   class Person(name: String, age: Int) {
     def this(name: String) = this(name, 0)
   }
-  class Adult(name: String, Int, idCard: String) extends Person(name, age)
+  class Adult(name: String, age: Int, idCard: String) extends Person(name, age)
 
-  class Doc(override val creatureType: String) extends Animal {
+  class Dog(override val creatureType: String) extends Animal {
     override def eat = {
       super.eat
       println("Crunch, Crunch")
+    }
   }
 
   val dog = new Dog("K9")

@@ -1,3 +1,4 @@
+package oop
 
 object Exceptions extends App {
 
