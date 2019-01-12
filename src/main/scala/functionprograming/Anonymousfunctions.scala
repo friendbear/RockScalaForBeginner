@@ -24,10 +24,8 @@ object Anonymousfunctions extends App {
   // no params
   val justDoSomething: () => Int = () => 3
 
-  val justDoSomethingByName: () => Int = () => 3
   println(justDoSomething) // function itself
   println(justDoSomething()) // call
-  println(justDoSomethingByName)
 
   // curly braces with lambdas
   val stringToInt = { (str: String) =>
@@ -39,10 +37,8 @@ object Anonymousfunctions extends App {
   val niceAdder: (Int, Int) => Int  = _ + _ // equivalent to (a, b) => a + b
 
   /*
-    1. MyList: replace all FunctionX calls with lambdas
     2. Rewrite the "special" adder as an anonymous function
    */
-
   val superAdd = (x: Int) => (y: Int) => x + y
   println(superAdd(3)(4))
 }
