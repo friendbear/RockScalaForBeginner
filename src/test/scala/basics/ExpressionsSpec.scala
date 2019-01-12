@@ -1,12 +1,13 @@
 package basics
 
-import basics.Expressions._
 import org.scalatest.{FlatSpec, Matchers}
 
-class ExpressonsSpec extends FlatSpec with Matchers{
+class ExpressionsSpec extends FlatSpec with Matchers{
 
   "Expressions" should "mix" in {
-    val aCode = aCodeBlock
-    aCode should be ("hello")
+    val s: String = Expressions.aCodeBlock
+    s should be ("hello")
+    Expressions.aCondition should be (true)
+    Expressions.someOtherValue should be (42)
   }
 }
