@@ -70,4 +70,58 @@ object HOFsCurries extends App {
     3. compose(f,g) => x => f(g(x))
        andThen(f,g) => x => g(f(x))
    */
+  // 2. toCurry
+  def toCurry[A, B, C](f: (A, B) => C): (A => B => C) =
+    x => y => f(x, y)
+
+  // toCurry by Function
+  def toCurryFunction[A, B >: A, C >: A](f: Function2[A, B, C]): Function1[A, Function1[B, C]] = new Function1[A, Function1[B, C]]{
+    override def apply(x: A): Function1[B, C] = new Function1[B, C] {
+      override def apply(y: B): C = {
+        f(x, y)
+      }
+    }
+  }
+
+  def fromCurry(f: (Int => Int => Int)): (Int, Int) => Int =
+    (x, y) => f(x)(y)
+
+
+  val superAdderBeforeFunction: Int => (Int => Int) = (x: Int) => (y: Int) => x + y
+  val superAdderFunction: Function1[Int, Function1[Int, Int]] = new Function1[Int, Function1[Int, Int]]{
+    override def apply(x: Int): Function1[Int, Int] = new Function1[Int, Int] {
+      override def apply(y: Int): Int = x + y
+    }
+  }
+
+  // 3. compose andThen
+  // FunctionX
+  def compose[A, B, T](f: A => B, g: T => A): T => B =
+    x => f(g(x))
+
+  def andThen[A, B, C](f: A => B, g: B => C): A => C =
+    x => g(f(x))
+
+  def superAdder2: (Int => Int => Int) = toCurry(_ + _)
+  def add4 = superAdder2(4)
+  println(add4(16))
+
+  def fun(x: Int,y: Int) = x + y
+  val simpleAdd = toCurry(fun)
+  val simpleAddFunction = toCurryFunction(fun)
+  println(simpleAdd(10)(10))
+  println(simpleAddFunction(10)(10))
+
+  val simpleAdder = fromCurry(superAdder)
+  println(simpleAdder(4, 17))
+
+  val add2 = (x: Int) => x + 2
+  val times3 = (x: Int) => x * 3
+
+  val composed = compose(add2, times3)
+  val ordered = andThen(add2, times3)
+
+  println(composed(4))
+  println(ordered(4))
+
 }
