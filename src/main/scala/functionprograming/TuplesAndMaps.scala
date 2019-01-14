@@ -1,5 +1,12 @@
 package functionprograming
 
+
+/**
+  * Functional Programming in Scala
+  *
+  * - Tuples and Maps(Exercises)
+  *
+  */
 object TuplesAndMaps extends App {
 
   // tuples = finite orderd "lists"
@@ -71,7 +78,7 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
         - add a person to the network
         - remove
         - friend (mutual)
-        - unfriend
+        - unFriend
 
    */
   object Network {
@@ -80,7 +87,7 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
 
     def friend(netowrk: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {
       val friendsA = netowrk(a)
-      val friendsB = netowrk(a)
+      val friendsB = netowrk(b)
       netowrk + (a -> (friendsA + b)) + (b -> (friendsB + a))
 
     }
@@ -101,19 +108,43 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     }
 
     // number of friends of a person
-    def nFriends(network: Map[String, Set[String]], person: String): Int = ???
+    def nFriends(network: Map[String, Set[String]], person: String): Int = {
+      if (!network.contains(person)) 0
+      else network(person).size
+    }
 
     // person with most friends
-    def mostFriends(network: Map[String, Set[String]]): String = ???
+    def mostFriends(network: Map[String, Set[String]]): String = {
+      network.maxBy(pair => pair._2.size)._1
+    }
 
     // how many people have NO friends
-    def nPeopleWithNoFriends(network: Map[String, Set[String]]) = ???
+    def nPeopleWithNoFriends(network: Map[String, Set[String]]) = {
+      //network.filterKeys(k => network(k).isEmpty).size
+      //network.filter(pair => pair._2.isEmpty).size
+      //network.count(pair => pair._2.isEmpty)
+      network.count(_._2.isEmpty)
+    }
 
     // If there is social connection between two people (direct or not)
-    def socialConnection(network: Map[String, Set[String]], a: String, b: String): Boolean = ???
+    def socialConnection(network: Map[String, Set[String]], a: String, b: String): Boolean = {
+      @annotation.tailrec
+      def bfs(target: String, consideredPeople: Set[String], discoveredPeople: Set[String]): Boolean = {
+        if (discoveredPeople.isEmpty) false
+        else {
+          val person = discoveredPeople.head
+          if (person == target) true
+          else if (consideredPeople.contains(person)) bfs(target, consideredPeople, discoveredPeople.tail)
+          else bfs(target, consideredPeople + person, discoveredPeople.tail ++ network(person))
+        }
+      }
+      bfs(b, Set(), network(a) + a) // a not contains myself
+    }
   }
 
   {
+
+    // TODO: No test code
     import Network._
     println("\nnetwork test started.")
 
@@ -123,10 +154,27 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     println(friend(network, "Bob", "Mary"))
     println(unfriend(friend(network, "Bob", "Mary"), "Bob", "Mary"))
 
-    // Jim,Bob,Mary
+    // Jim,Bob,Mary Test data
     val people = add(add(add(empty, "Bob"), "Mary"), "Jim")
+    val jimBob = friend(people, "Bob", "Jim")
+    val testNet = friend(jimBob, "Bob", "Mary")
+
+
+    // nFriends Spec Test
+    println(nFriends(testNet, "Bob"))
+
+    // mostFriends Spec Test
+    println(mostFriends(testNet))
+
+    // nPeopleWithNoFriends Spec Test
+    println(nPeopleWithNoFriends(testNet))
+
+    // socialConnection Spec Test
+    println(s"\n socialConnection Test data is $testNet")
+    println(socialConnection(testNet, "Mary", "Jim")) // => true
+
+    println(s"\n socialConnection Test data is $network")
+    println(socialConnection(network, "Mary", "Bob")) // => false
+
   }
-
-
-
 }
