@@ -179,7 +179,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
 
 
 object ListTest extends App {
-
+  // TODO: No Test Code
   val list = new Cons(1, Empty)
   val list2 = new Cons(1, new Cons(2, new Cons(3, Empty)))
   println(list.head)
@@ -224,4 +224,19 @@ object ListTest extends App {
 
   // fold
   println(listOfIntegers.fold(0)(_ + _))
+
+  /*
+   1. MyList supports for comprehensions?
+     - map(f: A => B) => MyList[B]
+       filter(p: A => Boolean)
+       flatMap(f: A=> MyList[B])
+  */
+
+  // for comprehensions
+  val combinations = for {
+    n <- listOfIntegers
+    string <- listOfStrings
+  } yield n + "-" + string
+  println(combinations)
+
 }
