@@ -5,7 +5,7 @@ import scala.util.Random
 
 object Sequences extends App{
 
-  // Sseq
+  // Ssq
   val aSequence = Seq(1, 3, 2, 4)
   println(aSequence)
   println(aSequence.reverse)
