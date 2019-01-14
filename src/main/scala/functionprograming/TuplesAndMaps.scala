@@ -1,0 +1,5 @@
+package functionprograming
+
+object TuplesAndMaps {
+
+}
