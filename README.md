@@ -8,8 +8,6 @@
 Rock The Scala For Beginners
 
 
-## Future
-
 <details>
 <summary>Future Map</summary>
 <pre>
