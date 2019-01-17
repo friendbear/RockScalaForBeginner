@@ -9,7 +9,7 @@ package functionprograming
   */
 object TuplesAndMaps extends App {
 
-  // tuples = finite orderd "lists"
+  // tuples = finite ordered "lists"
   val aTuple = new Tuple2(2, " hello, Scala") // Tuple2[Int, String = (Int, String)
 
   println(aTuple._1) // 2
