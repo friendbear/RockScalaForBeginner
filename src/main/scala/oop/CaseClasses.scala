@@ -1,14 +1,12 @@
 package oop
 
-
-
 /**
   * Object-Oriented Programing in Scala
   *
   * - Case Classes
   *
   */
-object CasseCasses extends App {
+object CaseClasses extends App {
 
   /*
    * equals, hashCode, toString
@@ -32,7 +30,7 @@ object CasseCasses extends App {
   val jim3 = jim.copy(age = 43)
   println(jim3)
 
-  // 5. CCs have compainion objects
+  // 5. CCs have companion objects
   val thePerson = Person
   val mary = Person("Mary", 23)
 

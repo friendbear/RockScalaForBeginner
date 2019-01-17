@@ -27,16 +27,15 @@ object Generics extends App {
   val emptyListOfIntegers = MyList.empty[Int]
 
   // variance problem
-  //
   class Animal
   class Cat extends Animal
   class Dog extends Animal
 
   // yes List[Cat] extends List[Animal] = COVARIANCE
-  class ConvariantList[+A]
+  class ContravariantList[+A]
 
   val animal: Animal = new Cat
-  val animalList: ConvariantList[Animal] = new ConvariantList[Cat]
+  val animalList: ContravariantList[Animal] = new ContravariantList[Cat]
 
   // animalList.add(new Dog) ??? HARD QUESTION. =>
  
@@ -46,8 +45,8 @@ object Generics extends App {
   val invariantAnimalList: InvariantList[Animal] = new InvariantList[Animal]
 
   // 3. Hell, no ! CONTRAVARIANCE
-  class ContravariantList[-A]
-  val contravariantList: ContravariantList[Cat] = new ContravariantList[Animal]
+  class NoContravariantList[-A]
+  val noContravariantList: NoContravariantList[Cat] = new NoContravariantList[Animal]
 
   class Trainer[-A]
   val trainer: Trainer[Cat] = new Trainer[Animal]
@@ -58,7 +57,5 @@ object Generics extends App {
 
   class Car
   val newCage = new Cage(new Car)
-
-
 
 }

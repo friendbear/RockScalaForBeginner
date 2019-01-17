@@ -48,7 +48,7 @@ object Sequences extends App{
   val maxRuns = 1000
   val maxCapacity = 100000
 
-  // Vector vs List WriteTime Randam access and update
+  // Vector vs List WriteTime Random access and update
   def getWriteTime(collection: Seq[Int]): Double = {
     val r = new Random
     val times = for {

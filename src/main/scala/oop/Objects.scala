@@ -29,7 +29,7 @@ object Objects {
     println(Person.N_EYES)
     println(Person.canFly)
 
-    // Scala object = SINGLETO INSTANCE
+    // Scala object = SINGLETON INSTANCE
     val mary = new Person("Mary")
     val john = new Person("John")
     println(mary == john) // => false

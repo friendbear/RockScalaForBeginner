@@ -7,7 +7,7 @@ package oop
   * - Anonymous Classes
   *
   */
-object AnnomousClasses extends App {
+object AnonymousClasses extends App {
 
   abstract class  Animal {
     def eat: Unit
@@ -19,10 +19,9 @@ object AnnomousClasses extends App {
 
 
   /*
-   * equivaient with 
+   * equivaient with
    *
    * class AnonymousClasses
-   *
    */
   println(funnyAnimal.getClass)
 

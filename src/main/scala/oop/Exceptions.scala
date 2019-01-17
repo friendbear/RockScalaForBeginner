@@ -24,7 +24,7 @@ object Exceptions extends App {
 
   // 2. how to catch exceptions
   def getInt(withExceptions: Boolean): Int =
-    if (withExceptions) throw new RuntimeException("No int  for you!")
+    if (withExceptions) throw new RuntimeException("No int for you!")
     else 42
 
   val potetialFail = try {
@@ -55,11 +55,11 @@ object Exceptions extends App {
    * 3. PocketCalculator
    *   - add(x, y)
    *   - multiply(x, y)
-   *   - substract(x, y)
+   *   - subtract(x, y)
    *   - divide(x, y)
    * Throw
    *   - OverflowException if add(x,y) exceeds Int.MAX_VALUE
-   *   - UnderflowException if substract (x,y) exceeds Int.MIN_VALUE
+   *   - UnderflowException if subtract (x,y) exceeds Int.MIN_VALUE
    */
 
   // 1.  OOM
