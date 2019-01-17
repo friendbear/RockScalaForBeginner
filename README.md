@@ -24,7 +24,8 @@ val power = {
 // ElasticsSearch -> Kibana -> ...
 }
 </code>
-
+</pre>
+<pre>
 <code>
 + Scala Native
 + Scala JS
