@@ -7,7 +7,7 @@ package functionprograming
   * - Anonymous Functions
   *
   */
-object Anonymousfunctions extends App {
+object AnonymousFunctions extends App {
 
   val doublerF = new Function[Int, Int] {
     override def apply(v1: Int): Int = v1 * 2

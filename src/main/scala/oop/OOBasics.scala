@@ -57,7 +57,7 @@ class Person(name: String,val age: Int = 0) {
   Novel: name, year of release, author
   - authorAge
   - inWrittenBy(author)
-  - copy (new year of relase) = new instance of Novel
+  - copy (new year of release) = new instance of Novel
 
 */
 class Writer(firstName: String, surname: String, val year: Int) {
@@ -81,11 +81,11 @@ class Novel(val name: String, val year: Int, val author: Writer) {
 
  class Counter(val count: Int = 0) {
   def inc = {
-    println("Incrimenting")
-    new Counter(count + 1) /// immutibility
+    println("Incrementing")
+    new Counter(count + 1)
   }
   def dec = {
-    println("decrimenting")
+    println("Decrementing")
     new Counter(count - 1)
   }
 
@@ -100,6 +100,5 @@ class Novel(val name: String, val year: Int, val author: Writer) {
   }
 
   def print = println(this)
-
 }
 

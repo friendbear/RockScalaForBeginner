@@ -13,7 +13,7 @@ object Expressions {
   println(x)
 
   println(2 + 3 + 4)
-  // + - * / & | ^ << >> >>> (right shift with zero extnsion)
+  // + - * / & | ^ << >> >>> (right shift with zero extension)
   println(1 == x)
 
   // == != >= < <=
@@ -29,9 +29,9 @@ object Expressions {
 
   // IF expression
   val aCondition = true
-  val aConditiondValue = if (aCondition) 5 else 3
+  val aConditionedValue = if (aCondition) 5 else 3
 
-  println(aConditiondValue)
+  println(aConditionedValue)
   println(if(aCondition) 5 else 3)
   println(1 + 3)
 
@@ -57,7 +57,7 @@ object Expressions {
     if (z > 2) "hello" else "goodbye"
   }
 
-  // 1. difference bootween "hello world" vs println("hello world")?
+  // 1. difference between "hello world" vs println("hello world")?
   // 2.
 
   val someValue = {

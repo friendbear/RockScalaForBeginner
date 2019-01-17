@@ -85,14 +85,14 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     def add(network: Map[String, Set[String]], person: String): Map[String, Set[String]] =
       network + (person -> Set())
 
-    def friend(netowrk: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {
-      val friendsA = netowrk(a)
-      val friendsB = netowrk(b)
-      netowrk + (a -> (friendsA + b)) + (b -> (friendsB + a))
+    def friend(network: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {
+      val friendsA = network(a)
+      val friendsB = network(b)
+      network + (a -> (friendsA + b)) + (b -> (friendsB + a))
 
     }
 
-    def unfriend(network: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {
+    def unFriend(network: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {
       val friendsA = network(a)
       val friendsB = network(a)
       network + (a -> (friendsA - b)) + (b -> (friendsB - a))
@@ -101,7 +101,7 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     def remove(network: Map[String, Set[String]], person: String): Map[String, Set[String]] = {
       def removeAux(friends: Set[String], networkAcc: Map[String, Set[String]]): Map[String, Set[String]] = {
         if (friends.isEmpty) networkAcc
-        else removeAux(friends.tail, unfriend(networkAcc, person, friends.head))
+        else removeAux(friends.tail, unFriend(networkAcc, person, friends.head))
       }
       val unfriended = removeAux(network(person), network) // network removed
       unfriended - person  // remove map
@@ -152,7 +152,7 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     val network = add(add(empty, "Bob"), "Mary")
     println(network)
     println(friend(network, "Bob", "Mary"))
-    println(unfriend(friend(network, "Bob", "Mary"), "Bob", "Mary"))
+    println(unFriend(friend(network, "Bob", "Mary"), "Bob", "Mary"))
 
     // Jim,Bob,Mary Test data
     val people = add(add(add(empty, "Bob"), "Mary"), "Jim")

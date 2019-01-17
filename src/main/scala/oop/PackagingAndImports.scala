@@ -17,7 +17,7 @@ import java.util.Date
 // scala.Predef = println, ???
 object PackagingAndImports extends App {
 
-  val writer = new Writer("Daniel", "RockeJVM", 2018)
+  val writer = new Writer("Daniel", "RockJVM", 2018)
 
   // import the package
 
@@ -34,6 +34,5 @@ object PackagingAndImports extends App {
   val date = new Date
   // 2. use aliasing
   val sqlDate = new SqlDate(2018, 5, 4)
-
 
 }

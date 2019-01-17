@@ -26,17 +26,17 @@ object StringOps extends App {
   println(str.reverse)
   println(str.take(2))
 
-  // Scala-specific: String interpolators.
+  // Scala-specific: String interpolator.
   //
-  // //S-Interpolators
+  // //S-Interpolator
   val name = "David"
   val age = 12
 
   val greeting = s"Hello, my name is $name and I am $age years old"
-  val antohergreeting = s"Hello, my name is $name and I am $age I will be turning ${age + 1} yeears old."
-  println(antohergreeting)
+  val anotherGreeting = s"Hello, my name is $name and I am $age I will be turning ${age + 1} yeears old."
+  println(anotherGreeting)
 
-  // F-interpolators
+  // F-interpolator
   val speed = 1.2f
   val myth = f"$name%s can eat $speed%2.2f burgers per minute"
 
