@@ -4,7 +4,7 @@ package oop
 /**
   * Object-Oriented Programing in Scala
   *
-  * - EObject-Oriented Basics
+  * - Object-Oriented Basics
   * 10
   */
 object OOBasics extends App {

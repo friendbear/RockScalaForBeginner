@@ -15,7 +15,7 @@ object Generics extends App {
   }
 
   class MyMap[Key, Value]
-  val listOfIntegeres = new MyList[Int]
+  val listOfIntegers = new MyList[Int]
   val listOfStrings = new MyList[String]
 
   // generic methods
