@@ -3,6 +3,12 @@ package functionprograming
 import scala.util.Random
 
 
+/**
+  * Functional Programming in Scala
+  *
+  * - Sequences
+  *
+  */
 object Sequences extends App{
 
   // Ssq
