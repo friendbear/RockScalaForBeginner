@@ -31,7 +31,7 @@ object AbstractDataTypes extends App {
 
       val creatureType: String = "croc"
       def eat: Unit = println("nomnomnom")
-      def eat(animal: Animal): Unit = println(s"I'm acroc and I'm eathing ${animal.creatureType}")
+      def eat(animal: Animal): Unit = println(s"I'm a croc and I'm eating ${animal.creatureType}")
     }
 
     val dog = new Dog

@@ -1,5 +1,11 @@
 package patternmatch
 
+/**
+  * Pattern Matching
+  *
+  * - Pattern Everywhere
+  *
+  */
 object PatternsEverywhere extends App {
 
   // big idea #1
@@ -37,7 +43,7 @@ object PatternsEverywhere extends App {
   println(tail)
 
   // big idea #4 - NEW
-  val mappedList = list.map { x => x match
+  val mappedList = list.map {
     case v if v %2 == 0 => v + " is even"
     case 1 => "the one "
     case _ => "something else"

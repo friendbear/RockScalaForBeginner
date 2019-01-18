@@ -1,6 +1,12 @@
 package oop
 
 
+/**
+  * Object-Oriented Programing in Scala
+  *
+  * - MethodNotations
+  *
+  */
 object MethodNotations extends App {
 
   class Person(val name: String, val favoriteMovie: String,val age: Int = 1) {
@@ -40,7 +46,7 @@ object MethodNotations extends App {
   // prefix notation
   val x = -1    // equivalent with 1.unary_
   val y = 1.unary_-
-  // unary_ prefix onry
+  // unary_ prefix only
   
   println(!mary)
   println(mary.unary_!)
