@@ -1,6 +1,6 @@
 # Scala Beginner
 [![Build Status](https://travis-ci.org/friendbear/RockScalaForBeginner.svg?branch=master)](https://travis-ci.org/friendbear/RockScalaForBeginner)
-
+[![CircleCI](https://circleci.com/gh/friendbear/RockScalaForBeginner.svg?style=svg)](https://circleci.com/gh/friendbear/RockScalaForBeginner)
 ## Udemy Site
 
 <https://www.udemy.com/rock-the-jvm-scala-for-beginners>
