@@ -3,7 +3,7 @@ ThisBuild / organization := "friendbear.github.com"
 
 
 lazy val commonSettings = Seq(
-    version := "0.1.0"
+  version := "0.1.0"
 )
 
 
@@ -12,13 +12,13 @@ lazy val root = (project in file(".")).
     name := "scala-beginner",
     commonSettings,
     libraryDependencies ++= Seq(
-        "org.scalactic" %% "scalactic" % "3.0.5",
-        "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
+      "org.scalactic" %% "scalactic" % "3.0.5",
+      "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
     )
 
 
     //libraryDependencies ++= ...以下略
-    )
+  )
 
 
 resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
