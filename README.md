@@ -1,6 +1,7 @@
 # Scala Beginner
 [![Build Status](https://travis-ci.org/friendbear/RockScalaForBeginner.svg?branch=master)](https://travis-ci.org/friendbear/RockScalaForBeginner)
 [![CircleCI](https://circleci.com/gh/friendbear/RockScalaForBeginner.svg?style=svg)](https://circleci.com/gh/friendbear/RockScalaForBeginner)
+[![codecov](https://codecov.io/gh/friendbear/RockScalaForBeginner/branch/master/graph/badge.svg)](https://codecov.io/gh/friendbear/RockScalaForBeginner)
 [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/scala-beginner-ja/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ## Udemy Site
 
