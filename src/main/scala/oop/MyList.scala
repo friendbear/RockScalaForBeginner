@@ -52,7 +52,7 @@ abstract class MyList[+A] {
   def isEmpty: Boolean
   def add[B >: A](element: B): MyList[B]
   def printElements: String
-  override def toString: String = "[" + printElements + "]"
+  override def toString: String = printElements
 
   // higher-order functions
   def map[B](transformer: A => B): MyList[B]
@@ -177,66 +177,3 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     t.fold(operator(start, h))(operator)
 }
 
-
-object ListTest extends App {
-  // TODO: No Test Code
-  val list = new Cons(1, Empty)
-  val list2 = new Cons(1, new Cons(2, new Cons(3, Empty)))
-  println(list.head)
-  println(list2.tail.head)
-  println(list2.add(4).head)
-  println(list2.isEmpty)
-
-  println(list2.toString)
-
-
-  val listOfIntegers: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
-  val cloneListOfIntegers: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
-  val anotherListOfIntegers: MyList[Int] = new Cons(4, new Cons(5, Empty))
-  println(listOfIntegers.toString)
-  val listOfStrings: MyList[String] = new Cons("Hello", new Cons("world", new Cons("Scala", Empty)))
-  println(listOfStrings.toString)
-
-  println(listOfIntegers.map(x => x * 2)).toString
-
-/*  println(listOfIntegers.filter(new Function[Int, Boolean] {
-    override def apply(elem: Int): Boolean = elem % 2 == 0
-  }).toString) */
-  println(listOfIntegers.filter(_ % 2 == 0))
-
-  println((listOfIntegers ++ anotherListOfIntegers).toString)
-
-/*  println(listOfIntegers.flatMap(new Function1[Int, MyList[Int]] {
-    override def apply(elem: Int): MyList[Int] = new Cons(elem, new Cons(elem + 1, Empty))
-  }).toString) */
-  println(listOfIntegers.flatMap(t => new Cons(t, new Cons(t +1, Empty))).toString)
-
-  // CCs によりSensible equals, hashCode, toString
-  println(cloneListOfIntegers == listOfIntegers)
-
-  listOfIntegers.foreach(println _)
-
-  // sort
-  println(listOfIntegers.sort((x, y) => y - x))
-
-  // zipWith
-  println(anotherListOfIntegers.zipWith[String, String](listOfStrings, _ + "-" + _))
-
-  // fold
-  println(listOfIntegers.fold(0)(_ + _))
-
-  /*
-   1. MyList supports for comprehensions?
-     - map(f: A => B) => MyList[B]
-       filter(p: A => Boolean)
-       flatMap(f: A=> MyList[B])
-  */
-
-  // for comprehensions
-  val combinations = for {
-    n <- listOfIntegers
-    string <- listOfStrings
-  } yield n + "-" + string
-  println(combinations)
-
-}
