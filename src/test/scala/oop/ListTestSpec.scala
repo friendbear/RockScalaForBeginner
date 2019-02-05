@@ -36,10 +36,10 @@ class ListTestSpec extends FlatSpec with Matchers {
   it should "sort fold zipWith" in {
 
     // sort
-    listOfIntegers.sort((x, y) => y - x).toString should be ("5 4 3 2 1")
+    listOfIntegers.sort((x, y) => y - x).toString should be ("3 2 1")
 
     // zipWith
-    anotherListOfIntegers.zipWith[String, String](listOfStrings, _ + "-" + _).head should be ("1-Hello")
+    anotherListOfIntegers.zipWith[String, String](listOfStrings, _ + "-" + _).head should be ("4-Hello")
 
     // fold
     listOfIntegers.fold(0)(_ + _) should be (6)
