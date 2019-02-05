@@ -18,7 +18,7 @@ class HOFsCurriesSpec extends FlatSpec with Matchers {
   }
 
   it should "curriedFormatter" in {
-    curriedFormatter("%d")(10) should equal ("10")
+    curriedFormatter("%s")(10) should equal ("10")
   }
 
   it should "toCurry" in {
