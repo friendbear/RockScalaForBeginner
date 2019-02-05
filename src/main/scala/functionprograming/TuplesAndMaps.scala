@@ -66,7 +66,7 @@ Map(Danie -> 555)
 Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま, くま))
    */
 
-  // Exereisse
+  // Exercise
   /*
     1. What would happen if I had two original entries "Jim" -> 555 and "JIM" -> 999
    */
@@ -142,39 +142,4 @@ Map(n -> List(nakajima), t -> List(take), k -> List(kumagai), く -> List(くま
     }
   }
 
-  {
-
-    // TODO: No test code
-    import Network._
-    println("\nnetwork test started.")
-
-    val empty: Map[String, Set[String]] = Map()
-    val network = add(add(empty, "Bob"), "Mary")
-    println(network)
-    println(friend(network, "Bob", "Mary"))
-    println(unFriend(friend(network, "Bob", "Mary"), "Bob", "Mary"))
-
-    // Jim,Bob,Mary Test data
-    val people = add(add(add(empty, "Bob"), "Mary"), "Jim")
-    val jimBob = friend(people, "Bob", "Jim")
-    val testNet = friend(jimBob, "Bob", "Mary")
-
-
-    // nFriends Spec Test
-    println(nFriends(testNet, "Bob"))
-
-    // mostFriends Spec Test
-    println(mostFriends(testNet))
-
-    // nPeopleWithNoFriends Spec Test
-    println(nPeopleWithNoFriends(testNet))
-
-    // socialConnection Spec Test
-    println(s"\n socialConnection Test data is $testNet")
-    println(socialConnection(testNet, "Mary", "Jim")) // => true
-
-    println(s"\n socialConnection Test data is $network")
-    println(socialConnection(network, "Mary", "Bob")) // => false
-
-  }
 }
