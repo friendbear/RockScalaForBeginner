@@ -1,8 +1,8 @@
-package filesystem
+  package filesystem
 
 import java.util.Scanner
 
-import filesystem.commands.Command
+import filesystem.commands._
 import filesystem.files.Directory
 import filesysystem.State
 
@@ -10,7 +10,7 @@ import filesysystem.State
   * Coding practice: A Small File System
   *
   */
-object Flesystem extends App {
+object Filesystem extends App {
 
   val root = Directory.ROOT
   var state = State(root, root)
