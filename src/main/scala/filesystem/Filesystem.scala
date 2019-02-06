@@ -10,8 +10,7 @@ import filesysystem.State
   * Coding practice: A Small File System
   *
   */
-object F
-lesystem extends App {
+object Flesystem extends App {
 
   val root = Directory.ROOT
   var state = State(root, root)
