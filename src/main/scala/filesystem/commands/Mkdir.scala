@@ -24,19 +24,35 @@ class Mkdir(name: String) extends Command {
   }
 
   def doMkdir(state: State, name: String): State = {
+
     def updateStructure(currentDirectory: Directory, path: List[String], newEntry: DirEntry):Directory = {
       if (path.isEmpty) currentDirectory.addEntry(newEntry)
       else {
 
-        val oldEntry = currentDirectory.findEntry(path.head)
-        currentDirectory.replaceEntry(oldEntry.name, updateStructure(currentDirectory, path.tail, newEntry))
+        val oldEntry = currentDirectory.findEntry(path.head).asDirectory
+        currentDirectory.replaceEntry(oldEntry.name, updateStructure(oldEntry, path.tail, newEntry))
         /*
             /a/b
               /c
               /d
               (new entry)
-            currentDIrectory = /a
+            currentDirectory = /a
             path = ["b"]
+         */
+
+        /*
+          /a/b
+            (contents)
+            (new entry) /e
+
+          newRoot = updateStructure(root, ["a", "b"], /e)
+          => path.isEmpty?
+          => oldEntry = /a
+          root.replaceEntry("a", updateStructure(/a, ["b"], /e) = /a.replaceEntry("b"/ updateStructure(/b,
+            => path.isEmpty?
+            => oldEntry = /b
+            /a.replaceEntry("b", updateStructure(/b, [], /e) = /b.add(/e)
+              => path.isEmpty? => /b.add(/e)
          */
 
       }
@@ -72,7 +88,7 @@ class Mkdir(name: String) extends Command {
     // 4. find new working directory INSTANCE given wd's full path, in the NEW directory structure
     val newWd = newRoot.findDescendant(allDirsInPath)
 
-    //State(newRoot, newWd)
-    ???
+    State(newRoot, newWd)
+
   }
 }

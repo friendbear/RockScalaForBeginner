@@ -1,18 +1,24 @@
-package filesysystem
+
+package filesystem
 
 import java.util.Scanner
 
 import filesystem.commands.Command
 import filesystem.files.Directory
+import filesysystem.State
 
-object Filesystem extends App {
+/**
+  * Coding practice: A Small File System
+  *
+  */
+object Flesystem extends App {
 
   val root = Directory.ROOT
   var state = State(root, root)
-
   val scanner = new Scanner(System.in)
 
-  while (true) {
+  while(true) {
+
     state.show
     val input = scanner.nextLine()
     state = Command.from(input).apply(state)

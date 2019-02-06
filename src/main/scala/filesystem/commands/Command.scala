@@ -9,6 +9,7 @@ trait Command {
 
 object Command {
   val MKDIR = "mkdir"
+  val LS = "ls"
 
   def emptyCommand: Command = new Command {
     override def apply(state: State): State = state
@@ -22,11 +23,13 @@ object Command {
   def from(input: String): Command = {
     val tokens = input.split(" ")
 
-    if (tokens.isEmpty || tokens.isEmpty) emptyCommand
+    if (input.isEmpty || tokens.isEmpty) emptyCommand
+    else if (LS.equals(tokens(0))) {
+      new Ls
+    }
     else if (MKDIR.equals(tokens(0))) {
       if (tokens.length < 2) incompleteCommand(MKDIR)
       else new Mkdir(tokens(1))
-    }
-    new UnknownCommand
+    } else new UnknownCommand
   }
 }
