@@ -15,6 +15,7 @@ abstract class DirEntry(val parentPath: String, val name: String) {
   def asFile: File = throw new FilesystemException("")
   def getType: String
 
+  def isRoot = parentPath != Directory.ROOT_PATH
   def isDirectory: Boolean
   def isFile: Boolean
 }
