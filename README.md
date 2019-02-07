@@ -10,6 +10,7 @@
 ## Udemy Cource
 Rock The Scala For Beginners
 
+![img](cerificate.jpg)
 
 <details>
 <summary>Future Map</summary>
