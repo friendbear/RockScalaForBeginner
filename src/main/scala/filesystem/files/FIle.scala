@@ -13,6 +13,10 @@ extends DirEntry(parentPath, name) {
 
   override def isDirectory: Boolean = false
   override def isFile: Boolean = true
+  def setContents(contents: String): File =
+    new File(parentPath, name, contents)
+  def appendContends(newContents: String): File =
+    setContents(contents + "\n" + newContents)
 }
 
 object File {

@@ -1,7 +1,6 @@
 
 package filesystem
 
-import java.util.Scanner
 
 import filesystem.commands._
 import filesystem.files.Directory
@@ -14,13 +13,17 @@ import filesysystem.State
 object Filesystem extends App {
 
   val root = Directory.ROOT
-  var state = State(root, root)
-  val scanner = new Scanner(System.in)
+  // [1, 2, 3, 4]
+  /*
+    0 (op) 1 => 1
+    1 (op) 2 => 3
+    3 (op) 3 => 6
+    6 (op) 4 => your last value, 10a
 
-  while(true) {
-
-    state.show
-    val input = scanner.nextLine()
-    state = Command.from(input).apply(state)
-  }
+    List(1,2,3,4).foldLeft(0)(x, y) => x + y)
+   */
+  io.Source.stdin.getLines().foldLeft(State(root, root))((currentState, newLine) => {
+    currentState.show
+    Command.from(newLine).apply(currentState)
+  })
 }
