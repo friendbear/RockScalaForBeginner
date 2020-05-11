@@ -4,7 +4,7 @@ import filesystem.files.{Directory, File}
 import filesysystem.State
 
 import scala.annotation.tailrec
-
+/**
 class Echo(args: Array[String]) extends Command {
   override def apply(state: State): State = {
     /*
@@ -60,10 +60,10 @@ class Echo(args: Array[String]) extends Command {
         currentDirectory.addEntry(new File(currentDirectory.path, path.head, contents))
       else if (dirEntry.isDirectory) currentDirectory
       else if (append) currentDirectory.replaceEntry(path.head, dirEntry.asFile.appendContends(contents))
-      else currentDirectory.replaceEntry(path.head, dirEntry.asFile.setContends(contents))
+      // TODO else currentDirectory.replaceEntry(path.head, dirEntry.asFile.setContends(contents))
     }else {
       val nextDirectory = currentDirectory.findEntry(path.head).asDirectory
-      val newNextDirectory
+      // TODO val newNextDirectory
     }
   }
 
@@ -89,3 +89,4 @@ class Echo(args: Array[String]) extends Command {
     createContentHelper(0, "")
   }
 }
+**/
