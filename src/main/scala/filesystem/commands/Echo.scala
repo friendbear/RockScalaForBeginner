@@ -4,7 +4,6 @@ import filesystem.files.{Directory, File}
 import filesysystem.State
 
 import scala.annotation.tailrec
-/**
 class Echo(args: Array[String]) extends Command {
   override def apply(state: State): State = {
     /*
@@ -28,9 +27,9 @@ class Echo(args: Array[String]) extends Command {
       val contents = createContent(args, args.length -2)
 
       if (">>".equals(operator))
-        doEcho(state, contents, filename, true)
+        doEcho(state, contents, filename, append = true)
       else if (">".equals(operator))
-        doEcho(state, contents, filename, false)
+        doEcho(state, contents, filename, append = false)
       else
         state.setMessage(createContent(args, args.length))
     }
@@ -59,11 +58,15 @@ class Echo(args: Array[String]) extends Command {
       if (dirEntry == null)
         currentDirectory.addEntry(new File(currentDirectory.path, path.head, contents))
       else if (dirEntry.isDirectory) currentDirectory
-      else if (append) currentDirectory.replaceEntry(path.head, dirEntry.asFile.appendContends(contents))
-      // TODO else currentDirectory.replaceEntry(path.head, dirEntry.asFile.setContends(contents))
+      else
+        if (append) currentDirectory.replaceEntry(path.head, dirEntry.asFile.appendContends(contents))
+        else currentDirectory.replaceEntry(path.head, dirEntry.asFile.setContents(contents))
     }else {
       val nextDirectory = currentDirectory.findEntry(path.head).asDirectory
-      // TODO val newNextDirectory
+      val newNextDirectory = getRootAfterEcho(nextDirectory, path.tail, contents, append)
+
+      if (newNextDirectory == nextDirectory) currentDirectory
+      else currentDirectory.replaceEntry(path.head, newNextDirectory)
     }
   }
 
@@ -89,4 +92,3 @@ class Echo(args: Array[String]) extends Command {
     createContentHelper(0, "")
   }
 }
-**/
