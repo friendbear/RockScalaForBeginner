@@ -9,15 +9,16 @@ cache:
     - $HOME/.sbt/boot/scala-$TRAVIS_SCALA_VERSION
 
 scala:
-  - 2.12.8
+  - 2.13.6
 
 jdk:
-  - openjdk8
+  - openjdk11
 
 
 script:
   - sbt clean coverage test coverageReport
   - sbt ++$TRAVIS_SCALA_VERSION test
+  - sbt docker
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
