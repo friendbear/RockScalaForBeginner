@@ -1,5 +1,6 @@
 package oop
 
+import scala.language.postfixOps
 
 /**
   * Object-Oriented Programing in Scala
@@ -20,8 +21,8 @@ object MethodNotations extends App {
     def isAlive: Boolean = true
     def apply(): String = s"Hi, my name is $name and I like $favoriteMovie"
     def apply(time: Int): String = s"$name watched Inception $time times"
-    
-    
+
+
     def learns(thing: String): String = s"$name learns $thing"
     def learnsScala = this learns "Scala"
   }
@@ -47,7 +48,7 @@ object MethodNotations extends App {
   val x = -1    // equivalent with 1.unary_
   val y = 1.unary_-
   // unary_ prefix only
-  
+
   println(!mary)
   println(mary.unary_!)
 
@@ -86,5 +87,5 @@ object MethodNotations extends App {
    */
   println(mary(2))
 
-} 
+}
 
