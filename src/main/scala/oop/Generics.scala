@@ -7,6 +7,35 @@ package oop
   * - Generics
   *
   */
+
+// about Me
+trait Programmer {
+  def programming(lang: Seq[String])
+}
+trait Engineer {
+  //  def doSomething() = ???
+}
+trait Manager {
+  //  def doSomething() = ???
+}
+
+object Me extends App with Programmer with Engineer with Manager {
+  val weightScale =  55 to 70
+  val likeLocations = Map(
+    "神社" -> ("出雲大社", "皆さんで行きたいですね")
+  )
+  val lang = Seq("VC++", "Java", "C", "Shell", "Perl", "VB.NET", "C#", "COBOL", "Scala", "Go(見習い)", "Python",
+    " Rust(何じゃこりゃ)")
+  val logic = (like: String) => like
+  match {
+    case "oop"|"functional" => true
+    case _ => true
+  }
+  override def programming(lang: Seq[String]) = lang.filter(logic).foreach(println)
+
+  lazy val run = programming(lang)
+}
+
 object Generics extends App {
 
 
