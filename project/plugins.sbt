@@ -1,3 +1,4 @@
+resolvers += "Artima Maven Repository" at "https://repo.artima.com/releases"
 addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.12")
 
 // Codecov
@@ -14,5 +15,3 @@ libraryDependencies += "com.spotify" % "docker-client" % "8.9.0"
 lazy val app = (project in file(".")).dependsOn(assemblyPlugin)
 
 lazy val assemblyPlugin = RootProject(uri("git://github.com/sbt/sbt-assembly"))
-
-addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.12")
