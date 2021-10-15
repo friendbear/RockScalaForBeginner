@@ -20,7 +20,7 @@ jobs:
             rm sbt-$SBT_VERSION.deb
             apt-get update
             apt-get install -y python-pip git
-#            pip install awscli
+            pip install awscli
             apt-get clean && apt-get autoclean
       - checkout
       - restore_cache:
