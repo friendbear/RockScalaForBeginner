@@ -1,9 +1,11 @@
 package basics
 
 import basics.DefaultArgs._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class DefaultArgsSpec extends FlatSpec with Matchers{
+class DefaultArgsSpec extends AnyFlatSpec with Matchers{
 
   "trFact" should "return Int" in {
     val test1 = trFact(2)

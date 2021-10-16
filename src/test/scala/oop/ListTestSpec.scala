@@ -1,8 +1,10 @@
 package oop
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class ListTestSpec extends FlatSpec with Matchers {
+class ListTestSpec extends AnyFlatSpec with Matchers {
 
   behavior of "MyList Class"
 

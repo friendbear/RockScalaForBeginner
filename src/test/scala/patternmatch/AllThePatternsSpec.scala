@@ -1,9 +1,11 @@
 package patternmatch
 
 import oop.{Cons, Empty, MyList}
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class AllThePatternsSpec extends FlatSpec with Matchers {
+class AllThePatternsSpec extends AnyFlatSpec with Matchers {
 
   behavior of "AllThePatternsTest"
   lazy val x: Any = "Scala"

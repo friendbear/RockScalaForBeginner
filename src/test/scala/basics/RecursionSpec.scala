@@ -1,9 +1,11 @@
 package basics
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 import basics.Recursion._
 
-class RecursionSpec extends FlatSpec with Matchers {
+class RecursionSpec extends AnyFlatSpec with Matchers {
 
   behavior of "RecursionSpec"
 

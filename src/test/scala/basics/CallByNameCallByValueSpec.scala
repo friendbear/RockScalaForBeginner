@@ -1,13 +1,13 @@
 package basics
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
 
-class CallByNameCallByValueSpec extends FlatSpec with Matchers{
+class CallByNameCallByValueSpec extends AnyFunSuite {
 
-  "CallByName" should "return Unit" in {
-    CallByNameCallByValue.byName(System.nanoTime()) should be ()
+  test("CallByName should return Unit") {
+    assert(CallByNameCallByValue.byName(System.nanoTime()) === ())
   }
-  "CallByValue" should "return Unit" in {
-    CallByNameCallByValue.byValue(System.nanoTime()) should be ()
+  test("CallByValue should return Unit") {
+    assert(CallByNameCallByValue.byValue(System.nanoTime()) === ())
   }
 }

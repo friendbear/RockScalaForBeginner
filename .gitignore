@@ -1,4 +1,10 @@
 .metal
 .idea
+.vscode
+.metals
+.bloop
 target
+.bsp
 
+
+.bsp/sbt.json
