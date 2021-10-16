@@ -1,5 +1,3 @@
-//resolvers += "Artima Maven Repository" at "https://repo.artima.com/releases"
-//addSbtPlugin("com.artima.supersafe" % "sbtplugin" % "1.1.12")
 
 // Codecov
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.1")

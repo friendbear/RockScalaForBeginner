@@ -1,9 +1,11 @@
 package functionprograming
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 import functionprograming.HOFsCurries._
 
-class HOFsCurriesSpec extends FlatSpec with Matchers {
+class HOFsCurriesSpec extends AnyFlatSpec with Matchers {
 
   behavior of "HOFsCurriesTest"
 

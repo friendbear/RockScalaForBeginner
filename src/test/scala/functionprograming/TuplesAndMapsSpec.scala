@@ -1,9 +1,11 @@
 package functionprograming
 
 import functionprograming.TuplesAndMaps.Network
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class TuplesAndMapsSpec extends FlatSpec with Matchers{
+class TuplesAndMapsSpec extends AnyFlatSpec with Matchers{
 
   val empty1: Map[String, Set[String]] = Map()
   val network = Network.add(Network.add(empty1, "Bob"), "Mary")

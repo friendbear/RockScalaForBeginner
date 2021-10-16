@@ -8,25 +8,16 @@ lazy val commonSettings = Seq(
   version := "0.1.1"
 )
 
-lazy val app = (project in file("."))
-  .settings(
-    assembly / mainClass := Some("filesystem.filesystem.Main"),
-    assembly / assemblyJarName := "filesystem.jar"
-  )
-
-
 lazy val root = (project in file(".")).
   settings(
     name := "scala-beginner",
     commonSettings,
     libraryDependencies ++= Seq(
-      "org.scalactic" %% "scalactic" % "3.2.9",
-      "org.scalatest" %% "scalatest" % "3.2.9" % "test"
+      "org.scalactic" %% "scalactic" % "3.2.10",
+      "org.scalatest" %% "scalatest" % "3.2.10" % Test
     )
     //libraryDependencies ++= ...以下略
   )
-
-
 
 
 // ref: https://sbt-native-packager.readthedocs.io/en/stable/formats/docker.html

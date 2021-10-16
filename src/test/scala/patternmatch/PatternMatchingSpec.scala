@@ -1,9 +1,12 @@
 package patternmatch
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
+
 import patternmatch.PatternMatching.{Number, Prod, Sum, show}
 
-class PatternMatchingSpec extends FlatSpec with Matchers {
+class PatternMatchingSpec extends AnyFlatSpec with Matchers {
 
   behavior of "PatternMatching"
 

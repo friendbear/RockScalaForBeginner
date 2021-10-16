@@ -1,9 +1,11 @@
 package functionprograming
 
 import functionprograming.Options.Connection
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class OptionsSpec extends FlatSpec {
+class OptionsSpec extends AnyFlatSpec {
 
   behavior of "OptionsTest"
   lazy val config: Map[String, String] = Map(

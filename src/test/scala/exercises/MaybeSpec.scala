@@ -1,7 +1,10 @@
 package exercises
 
-import org.scalatest.{FlatSpec, Matchers}
-class MaybeSpec extends FlatSpec with Matchers{
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
+
+class MaybeSpec extends AnyFlatSpec with Matchers{
 
   behavior of "RecursionSpec"
 

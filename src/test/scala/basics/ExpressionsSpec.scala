@@ -1,8 +1,10 @@
 package basics
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
-class ExpressionsSpec extends FlatSpec with Matchers{
+class ExpressionsSpec extends AnyFlatSpec with Matchers{
 
   "Expressions" should "mix" in {
     val s: String = Expressions.aCodeBlock

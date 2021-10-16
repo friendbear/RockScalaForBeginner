@@ -1,11 +1,13 @@
 package functionprograming
 
 import functionprograming.HandlingFailure.HttpService
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest._
+import matchers.should._
 
 import scala.util.{Failure, Success}
 
-class HandlingFailureSpec extends FlatSpec with Matchers {
+class HandlingFailureSpec extends AnyFlatSpec with Matchers {
 
   behavior of "HandlingFailure"
 
