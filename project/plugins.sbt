@@ -6,9 +6,9 @@ addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.1")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.9.1")
 
 // https://github.com/marcuslonnberg/sbt-docker
-addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.8.2")
+addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.9.0")
 
-libraryDependencies += "com.spotify" % "docker-client" % "8.9.0"
+libraryDependencies += "com.spotify" % "docker-client" % "8.16.0"
 
 lazy val app = (project in file(".")).dependsOn(assemblyPlugin)
 

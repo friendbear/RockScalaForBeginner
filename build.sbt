@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.13.6"
+ThisBuild / scalaVersion := "2.13.9"
 ThisBuild / organization := "friendbear.github.io"
 ThisBuild / homepage := Some(url("https://github.com/friendbear/RockScalaForBeginner"))
 
@@ -13,8 +13,8 @@ lazy val root = (project in file(".")).
     name := "scala-beginner",
     commonSettings,
     libraryDependencies ++= Seq(
-      "org.scalactic" %% "scalactic" % "3.2.10",
-      "org.scalatest" %% "scalatest" % "3.2.10" % Test
+      "org.scalactic" %% "scalactic" % "3.2.15",
+      "org.scalatest" %% "scalatest" % "3.2.15" % Test
     )
     //libraryDependencies ++= ...以下略
   )
